@@ -1,0 +1,27 @@
+<h2>STUDENT DETAILS</h2>
+
+<div class="show_student_data" id="student_<%= @student.id %>">
+  <div class="show_student_image">
+	<%= image_tag @student.image.url(:thumb).to_s, :alt => "#{@student.id}_#{@student.first_name}_avatar" %>
+  </div>
+  <div class="show_student_data_attr">
+    <span class="show_data_label"> Name : </span>
+    <%= @student.full_name %>
+  </div>
+  <div class="show_student_data_attr">
+    <span class="show_data_label"> Date of Birth : </span>
+    <%= @student.date_of_birth %>
+  </div>
+  <div class="show_student_data_attr">
+    <span class="show_data_label"> Gender : </span>
+    <%= @student.gender.titlecase %>
+  </div>
+  <div class="show_student_data_attr">
+    <span class="show_data_label">&nbsp</span>
+    <%= link_to "Back to List", students_path %>
+	<% if admin? -%>|
+    <%= link_to "Edit", edit_student_path(@student) %> |
+    <%= link_to "Delete", @student, :method => "delete" %>
+	<% end -%>
+  </div>
+</div>

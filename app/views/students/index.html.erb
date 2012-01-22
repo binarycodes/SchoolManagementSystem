@@ -1,0 +1,34 @@
+<h2>STUDENT LIST</h2>
+
+<% if admin? -%>
+<%= link_to "New Student", new_student_path %>
+<% end -%>
+<div class="student_details">
+  <% for student in @students %>
+  <div class="student_data" id="student_<%= student.id %>">
+    <div class="student_image">
+      <%= image_tag student.image.url(:index).to_s,:alt => "#{student.id}_#{student.first_name}_avatar" %>
+    </div>
+    <div class="student_data_attr">
+      <span class="data_label"> Name : </span>
+      <%= student.full_name %>
+    </div>
+    <div class="student_data_attr">
+      <span class="data_label"> Date of Birth : </span>
+      <%= student.date_of_birth %>
+    </div>
+    <div class="student_data_attr">
+      <span class="data_label"> Gender : </span>
+      <%= student.gender.titlecase %>
+    </div>
+    <div class="student_data_attr">
+      <span class="data_label">&nbsp</span>
+      <%= link_to "See Details", student %>
+      <% if admin? -%>|
+      <%= link_to "Edit", edit_student_path(student) %> |
+      <%= link_to "Delete", student, :method => "delete" %>
+      <% end -%>
+    </div>
+  </div>
+  <% end %>
+</div>

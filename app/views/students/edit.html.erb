@@ -1,0 +1,30 @@
+<h1>EDIT STUDENT DETAILS</h1>
+
+<%= form_for @student, :html => {:multipart => true} do |f| %>
+<p>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+</p>
+<p>
+  <%= f.label :middle_name %>
+  <%= f.text_field :middle_name %>
+</p>
+<p>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+</p>
+<p>
+  <%= f.label :gender %>
+  <%= f.radio_button :gender, 'male' %> Male
+  <%= f.radio_button :gender, 'female' %> Female
+</p>
+<p>
+  <%= f.label :date_of_birth %>
+  <%= f.date_select :date_of_birth, :start_year => 1960, :end_year => 2020 %>
+</p>
+<p>
+  <%= image_tag @student.image.url(:thumb).to_s %>
+  <%= f.file_field :image %>
+</p>
+<%= f.submit %>
+<% end %>

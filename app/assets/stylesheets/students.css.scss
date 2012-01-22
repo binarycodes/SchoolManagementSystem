@@ -1,0 +1,123 @@
+// Place all the styles related to the Students controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$blue: #3A8DB1;
+$white: #ffffff;
+
+body {
+    background: $blue;
+    font-family: 'Droid Sans', 'DejaVu Sans';
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 0px 20px 20px 0px rgba(255, 255, 255, 0.4);
+}
+
+#content {
+    background: $white;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 50px 20px;
+}
+
+.student_details {
+    padding: 10px;
+}
+
+.student_data {
+    height: 120px;
+    width: auto;
+    padding: 20px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.student_data_attr {
+    padding-bottom: 0px 5px 5px 5px;
+}
+
+.data_label {
+    width: 120px;
+    display: block;
+    float: left;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.student_image {
+    float:left;
+    height: 100px;
+    width: 100px;
+    clear: left;
+}
+
+/* For Displaying Student Data */
+
+.show_student_details {
+    padding: 20px;
+}
+
+.show_student_data {
+    width: auto;
+    padding: 20px;
+    min-height: 200px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.show_student_data_attr {
+    padding: 5px;
+}
+
+.show_data_label {
+    width: 120px;
+    display: block;
+    float:left;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.show_student_image {
+    float:left;
+    height: 200px;
+    width: 200px;
+    clear: left;
+}
+
+/* For New Student Entry Form */
+
+.new_student {
+    padding: 10px;
+}
+
+.student_form_field {
+    padding: 0px 5px 10px 5px;
+}
+
+.student_form_field label {
+    display: block;
+    float: left;
+    width: 150px;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.new_student input {
+    clear: left;
+    width: auto;
+    margin: 5px 0 0 10px;
+}
+
+.new_student input[type='submit'] {
+    width: auto;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.new_student input[type='radio'] {
+    width: auto;
+}
+
+.field_with_errors {
+	display: inline;
+}

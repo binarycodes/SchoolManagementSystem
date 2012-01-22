@@ -1,0 +1,35 @@
+<h2>NEW STUDENT</h2>
+
+<%= form_for @student, :html => {:multipart => true} do |f| %>
+<%= render "shared/error_messages", :target => @student %>
+
+<div class="student_form_field">
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+</div>
+<div class="student_form_field">
+  <%= f.label :middle_name %>
+  <%= f.text_field :middle_name %>
+</div>
+<div class="student_form_field">
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+</div>
+<div class="student_form_field">
+  <%= f.label :gender %>
+  <%= f.radio_button :gender, 'male' %> Male <%= f.radio_button :gender, 'female' %> Female
+</div>
+<div class="student_form_field">
+  <%= f.label :date_of_birth %>
+  <%= f.date_select :date_of_birth, :start_year => 1960, :end_year => 2020 %>
+</div>
+<div class="student_form_field">
+  <%= f.label :image, 'Upload your picture' %>
+  <%= f.file_field :image %>
+</div>
+<div class="student_form_field">
+  <%= f.submit %>
+</div>
+<% end %>
+
+<%= link_to 'Back To List', students_path %>
