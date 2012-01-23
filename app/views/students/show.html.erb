@@ -1,8 +1,10 @@
 <h2>STUDENT DETAILS</h2>
 
+<%= render :partial => "_show_next_prev_link", :locals => {:prev_target => @prev_student, :next_target => @next_student} %>
+
 <div class="show_student_data" id="student_<%= @student.id %>">
   <div class="show_student_image">
-	<%= image_tag @student.image.url(:thumb).to_s, :alt => "#{@student.id}_#{@student.first_name}_avatar" %>
+    <%= image_tag @student.image.url(:thumb).to_s, :alt => "#{@student.id}_#{@student.first_name}_avatar" %>
   </div>
   <div class="show_student_data_attr">
     <span class="show_data_label"> Name : </span>
@@ -19,9 +21,9 @@
   <div class="show_student_data_attr">
     <span class="show_data_label">&nbsp</span>
     <%= link_to "Back to List", students_path %>
-	<% if admin? -%>|
+    <% if admin? -%>|
     <%= link_to "Edit", edit_student_path(@student) %> |
     <%= link_to "Delete", @student, :method => "delete" %>
-	<% end -%>
+    <% end -%>
   </div>
 </div>

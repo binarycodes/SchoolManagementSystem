@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.all(:order => "created_at ASC")
+    @students = Student.order("created_at ASC")
   end
 
   def new
@@ -24,6 +24,8 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find params[:id]
+    @prev_student = Student.prev(@student).first
+    @next_student = Student.next(@student).first
   end
 
   def edit

@@ -1,0 +1,7 @@
+<% if prev_target -%>
+<%= link_to "Prev", prev_target %>
+<% end -%>
+<% if prev_target and next_target %> | <% end %>
+<% if next_target -%>
+<%= link_to "Next", next_target %>
+<% end -%>
