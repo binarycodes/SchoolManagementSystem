@@ -15,6 +15,10 @@ h1 {
     text-shadow: 0px 20px 20px 0px rgba(255, 255, 255, 0.4);
 }
 
+img {
+	vertical-align: middle;
+}
+
 #content {
     background: $white;
     padding: 40px;
@@ -34,7 +38,7 @@ h1 {
 }
 
 .student_data_attr {
-    padding-bottom: 0px 5px 5px 5px;
+    padding-bottom: 5px;
 }
 
 .data_label {
@@ -99,18 +103,20 @@ h1 {
     float: left;
     width: 150px;
     text-align: right;
+	vertical-align: center;
     padding-right: 15px;
 }
 
 .new_student input {
     clear: left;
     width: auto;
-    margin: 5px 0 0 10px;
+    margin: 5px 0px 0px 0px;
 }
 
 .new_student input[type='submit'] {
     width: auto;
-    padding: 5px;
+    margin-left: 165px;
+	padding: 5px;
     font-size: 12px;
 }
 
