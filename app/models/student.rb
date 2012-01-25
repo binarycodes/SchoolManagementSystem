@@ -16,12 +16,14 @@ class Student < ActiveRecord::Base
 
   validate :birthday_check
 
-  scope :has_img, where("image is not null")
+  scope :prev, lambda { |s|
+    where("created_at > ?", s.created_at).select("id").order("created_at ASC").limit(1)
+  }
+  scope :next, lambda { |s|
+    where("created_at < ?", s.created_at).select("id").order("created_at DESC").limit(1)
+  }
 
-  scope :prev, lambda { |s| where("created_at <?", s.created_at).select("id").order("created_at DESC").limit(1) }
-  scope :next, lambda { |s| where("created_at >?", s.created_at).select("id").order("created_at ASC").limit(1) }
 
-  
   def full_name
     [first_name, middle_name, last_name].join(' ');
   end

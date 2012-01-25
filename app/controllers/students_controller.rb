@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new params[:student]
     if @student.save
-      redirect_to students_path, :notice => "New student successfully added"
+      redirect_to @student, :notice => "New student successfully added"
     else
       render :action => :new, :alert => "An error was encountered while saving"
     end
