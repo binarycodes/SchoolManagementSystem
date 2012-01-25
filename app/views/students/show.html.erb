@@ -12,7 +12,7 @@
   </div>
   <div class="show_student_data_attr">
     <span class="show_data_label"> Date of Birth : </span>
-    <%= @student.date_of_birth %>
+    <%= @student.date_of_birth.to_s(:birthday) %>
   </div>
   <div class="show_student_data_attr">
     <span class="show_data_label"> Gender : </span>

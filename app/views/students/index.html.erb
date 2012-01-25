@@ -1,4 +1,4 @@
-<h2>STUDENT LIST</h2>
+<h2><%= link_to 'STUDENT LIST', students_path %></h2>
 
 <% if admin? -%>
 <%= link_to "New Student", new_student_path %>
@@ -15,7 +15,7 @@
     </div>
     <div class="student_data_attr">
       <span class="data_label"> Date of Birth : </span>
-      <%= student.date_of_birth %>
+      <%= student.date_of_birth.to_s(:birthday) %>
     </div>
     <div class="student_data_attr">
       <span class="data_label"> Gender : </span>
