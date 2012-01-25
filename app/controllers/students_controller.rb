@@ -1,12 +1,8 @@
 class StudentsController < ApplicationController
   before_filter :authorize, :except => [:index, :show]
-  
-  def not_found
-    raise ActionController::RoutingError.new('Not Found');
-  end
 
   def index
-    @students = Student.order("created_at ASC")
+    @students = Student.search(params[:search])
   end
 
   def new

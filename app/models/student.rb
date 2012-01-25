@@ -33,4 +33,12 @@ class Student < ActiveRecord::Base
     end
   end
 
+  def self.search(search)
+    if search
+      Student.where("first_name LIKE :search OR middle_name LIKE :search OR last_name LIKE :search",
+                    {:search => "%#{search}%"}).order("first_name ASC")
+    else
+      Student.order("created_at DESC")
+    end
+  end
 end
